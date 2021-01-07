@@ -1,15 +1,17 @@
+import "./TodoList.styles.scss";
+
 interface TodoListProps {
-  items: {id: string, text: string}[];
+  items: { id: string; text: string }[];
 }
 
-const TodoList: React.FC<TodoListProps> = props => {
+const TodoList: React.FC<TodoListProps> = (props) => {
   return (
-    <ul>
+    <ol>
       {props.items.map((todo) => (
         <li key={todo.id}>{todo.text}</li>
       ))}
-    </ul>
+    </ol>
   );
-}
+};
 
 export default TodoList;

@@ -1,8 +1,9 @@
 // import React from 'react'; // importing no longer needed with React 17
 import { useState } from "react";
-import TodoList from "./components/TodoList";
-import NewTodo from "./components/NewTodo";
+import TodoList from "./components/TodoList/TodoList";
+import NewTodo from "./components/NewTodo/NewTodo";
 import Todo from "./todo.model";
+import Title from "./components/Title/Title";
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -16,8 +17,11 @@ const App: React.FC = () => {
     ]);
   };
 
+  const titleText:string = "This example was built with React using typescript and scss"
+
   return (
     <div className="App">
+      <Title text={titleText} />
       <NewTodo onAddTodo={todoAddHandler} />
       <TodoList items={todos} />
     </div>

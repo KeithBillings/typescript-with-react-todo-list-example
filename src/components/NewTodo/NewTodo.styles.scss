@@ -1,0 +1,18 @@
+form {
+  margin: 5% 25% 0% 25%;
+  div {
+    padding: 5%;
+  }
+  label {
+    padding: 5%;
+  }
+}
+
+button {
+  background-color: whitesmoke;
+  padding: 1rem;
+  border: none;
+  &:enabled {
+    border: none;
+  }
+}
