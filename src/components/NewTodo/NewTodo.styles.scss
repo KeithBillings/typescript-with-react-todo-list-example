@@ -10,9 +10,12 @@ form {
 
 button {
   background-color: whitesmoke;
-  padding: 1rem;
+  padding: .75rem;
   border: none;
-  &:enabled {
-    border: none;
+  box-shadow: -5px 5px 10px black;
+  transition: transform 0.4s;
+  margin: 0rem 1rem 1rem 1rem;
+  &:active {
+    transform: translateY(5px);
   }
 }

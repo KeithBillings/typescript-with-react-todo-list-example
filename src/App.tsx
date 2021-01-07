@@ -8,6 +8,9 @@ import Title from "./components/Title/Title";
 const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
 
+  const titleText: string =
+    "This example was built with React using typescript and scss";
+
   const todoAddHandler = (text: string) => {
     // function that is called when button is pressed. Here to add a new todo item to the todo list array
     setTodos((previousTodos) => [
@@ -17,13 +20,17 @@ const App: React.FC = () => {
     ]);
   };
 
-  const titleText:string = "This example was built with React using typescript and scss"
+  const todoDeleteHandler = (todoId: string) => {
+    setTodos((prevTodos) => {
+      return prevTodos.filter((todo) => todo.id !== todoId);
+    });
+  };
 
   return (
     <div className="App">
       <Title text={titleText} />
       <NewTodo onAddTodo={todoAddHandler} />
-      <TodoList items={todos} />
+      <TodoList items={todos} todoDeleteHandler={todoDeleteHandler} />
     </div>
   );
 };
